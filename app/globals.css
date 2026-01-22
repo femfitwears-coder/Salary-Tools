@@ -1,3 +1,15 @@
+html,
+body {
+  min-height: 100%;
+  background: linear-gradient(135deg,
+      #7dacdb 0%,
+      #735cda 40%,
+      #9f3cb3 100%);
+  color: #111827;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
 @import "tailwindcss";
 
 :root {
@@ -12,15 +24,433 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.page-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 16px;
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  color: #6b7280;
+  margin-bottom: 32px;
+}
+
+/* ===== Glass Card Effect ===== */
+
+.card {
+  background: rgba(241, 236, 236, 0.75);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+/* Hover thoda premium feel ke liye */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* Result card – thoda blue glass */
+.result-card {
+  background: rgba(255, 255, 255, 0.75);
+  /* light blue glass */
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(191, 219, 254, 0.6);
+}
+
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.calculator-grid {
+  display: grid;
+  gap: 32px;
+}
+
+@media (min-width: 768px) {
+  .calculator-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.checkbox-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+
+.result-main {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.result-row {
+  font-size: 0.9rem;
+  color: #374151;
+}
+
+/* ===== FAQ Glassmorphism Final ===== */
+
+.faq-section {
+  margin-top: 80px;
+}
+
+.faq-section h2 {
+  margin-bottom: 28px;
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+}
+
+.faq-question {
+  padding: 18px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  padding: 0 20px 18px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+/* ===== HOME PAGE STYLES ===== */
+
+.home-hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.home-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.home-subtitle {
+  max-width: 720px;
+  margin: auto;
+  font-size: 1.05rem;
+  color: #4b5563;
+}
+
+.home-tools {
+  margin-top: 60px;
+}
+
+.home-tools-grid {
+  display: grid;
+  gap: 28px;
+}
+
+@media (min-width: 768px) {
+  .home-tools-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Home tool cards (different from calculator cards) */
+.home-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.home-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.14);
+}
+
+.home-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.home-card-desc {
+  color: #4b5563;
+  font-size: 0.95rem;
+  margin-bottom: 18px;
+}
+
+.home-card-link {
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+}
+.home-card-link:hover {
+  text-decoration: underline;
+}
+/* ===== PREMIUM GLASS FOOTER ===== */
+
+.site-footer {
+  margin-top: 100px;
+  padding: 48px 20px;
+  background: linear-gradient(
+    135deg,
+    rgb(255, 255, 255),
+    rgba(255, 255, 255, 0.55)
+  );
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+
+.footer-inner {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  gap: 40px;
+}
+
+@media (min-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: start;
+  }
+}
+
+
+.footer-brand h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: #4b5563;
+}
+
+.footer-links h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  display: block;
+  font-size: 0.9rem;
+  color: #374151;
+  text-decoration: none;
+  margin-bottom: 6px;
+}
+
+.footer-links a:hover {
+  color: #2563eb;
+}
+
+.footer-bottom {
+  margin-top: 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-size: 0.8rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* ===== 404 PAGE – FINAL POLISHED ===== */
+
+.notfound-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    #fdfdff 0%,
+    #ffffff 50%,
+    #ffffff 100%
+  );
+  padding: 40px 20px;
+}
+
+.notfound-container {
+  max-width: 1100px;
+  width: 100%;
+  display: grid;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .notfound-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.notfound-text {
+  color: #0f172a;
+}
+
+.notfound-title {
+  font-size: 6rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.notfound-subtitle {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.notfound-message {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.notfound-btn {
+  display: inline-block;
+  padding: 12px 26px;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.notfound-btn:hover {
+  background: #020617;
+  transform: translateY(-2px);
+}
+
+.notfound-image {
+  display: flex;
+  justify-content: center;
+}
+.notfound-image img {
+  transition: transform 0.3s ease;
+}
+.notfound-image img:hover {
+  transform: scale(1.03);
+}
+/* ===== Hide Footer on 404 Page ===== */
+.hide-footer + footer,
+.hide-footer footer,
+.notfound-wrapper + footer {
+  display: none !important;
+}
+
+/* ===== PREMIUM GLASS NAVBAR ===== */
+
+.site-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.navbar-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 22px;
+}
+
+.navbar-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  text-decoration: none;
+  position: relative;
+}
+
+/* Hover underline effect */
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.25s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .navbar-links {
+    gap: 14px;
+  }
 }
